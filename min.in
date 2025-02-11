@@ -1,0 +1,6 @@
+minimization 
+ &cntrl 
+  imin=1, maxcyc=3000, ncyc=500,
+  cut=8.0, ntb=1, ntp=0,
+  ntc=2, ntf=2,
+ /

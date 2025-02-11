@@ -1,0 +1,7 @@
+source leaprc.DNA.bsc1 
+source leaprc.water.spce 
+dna = loadpdb "dna.pdb"
+solvateBox dna SPCBOX 15.0 
+addIons dna K+ 0 
+saveamberparm dna system.parm7 dna.rst7 
+quit
