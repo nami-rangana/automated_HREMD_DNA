@@ -1,28 +1,23 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import os
 import numpy as np
 import subprocess
 import time
 
+# Loading amber module
 amber = 'module purge; module load cuda/12.2.2  gcc/12.2.0  openmpi/4.1.5 amber/22'
+# Defining SLURM variables
 common_script = """
 #SBATCH --mail-type=ALL
-#SBATCH --mail-user=t.desilva@ufl.edu
+#SBATCH --mail-user=<user>@ufl.edu
 #SBATCH --distribution=cyclic:cyclic
 #SBATCH --mem-per-cpu=4000
 #SBATCH --partition=gpu
 """
 
 os.system('rm delta.* delta_tortion_eq.* disang.* md.* eq.* min.* system.parm7 tleap.in leap.log logfile.* reus.* equlibration.* minimization.* dna.rst7 mdinfo* > /dev/null 2>&1')
-
-
-# In[2]:
-
 
 pdb = 'dna.pdb' # Name of the pdb file
 
